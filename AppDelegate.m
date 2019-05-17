@@ -1,14 +1,13 @@
 //
 //  AppDelegate.m
-//  Homepwner
+//  TouchTracker
 //
-//  Created by sharen on 2019/5/8.
+//  Created by sharen on 2019/5/10.
 //  Copyright © 2019年 QingShuXueTang. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "BNRItemsViewController.h"
-
+#import "BNRDrawViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,12 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window=[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    BNRItemsViewController *itemViewController=[[BNRItemsViewController alloc]init];
+    self.window=[[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     
-    UINavigationController *navController=[[UINavigationController alloc] initWithRootViewController:itemViewController];//创建UINavigationController对象，该对象栈只包含itemViewController
-    
-    self.window.rootViewController=navController;
+    BNRDrawViewController *dvc=[[BNRDrawViewController alloc]init];
+    self.window.rootViewController=dvc;
     self.window.backgroundColor=[UIColor whiteColor];
     [self.window makeKeyWindow];
     return YES;
@@ -53,7 +50,7 @@
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:
+    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
 
